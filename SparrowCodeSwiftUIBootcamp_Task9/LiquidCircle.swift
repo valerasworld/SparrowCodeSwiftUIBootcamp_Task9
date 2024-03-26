@@ -30,6 +30,7 @@ struct LiquidCircle: View {
         let cloudIconOffset = findNumberInNormalisedRange(number: translation, lowestData: 90, highestData: 129, rangeMin: 0, rangeMax: 7)
         
         let cireclesScale = findNumberInNormalisedRange(number: translation, lowestData: 0, highestData: 130, rangeMin: 0, rangeMax: 0.15)
+        let circlesScaleEffect = CGSize(width: max(1.0, 1.15 - cireclesScale), height: max(1.0, 1.15 - cireclesScale))
         
         let grayToWhite = findNumberInNormalisedRange(number: translation, lowestData: 0, highestData: 114, rangeMin: 0.6, rangeMax: 1)
         
@@ -68,23 +69,13 @@ struct LiquidCircle: View {
                         }
                     } symbols: {
                         Circle()
-                            .frame(width: 150, height: 100, alignment: .center)
-                            .scaleEffect(
-                                CGSize(
-                                    width: max(1.0, 1.15 - cireclesScale),
-                                    height: max(1.0, 1.15 - cireclesScale)
-                                )
-                            )
+                            .frame(width: 100, height: 100, alignment: .center)
+                            .scaleEffect(circlesScaleEffect)
                             .tag(0)
                         
                         Circle()
                             .frame(width: 100, height: 100, alignment: .center)
-                            .scaleEffect(
-                                CGSize(
-                                    width: max(1.0, 1.15 - cireclesScale),
-                                    height: max(1.0, 1.15 - cireclesScale)
-                                )
-                            )
+                            .scaleEffect(circlesScaleEffect)
                             .offset(offset)
                             .tag(1)
                     }
