@@ -39,9 +39,9 @@ struct LiquidCircle: View {
             Rectangle()
                 .foregroundStyle(.black.gradient).opacity(cloudOpacity).ignoresSafeArea()
             
-                        SpriteView(scene: RainFall(), options: [.allowsTransparency])
-                            .opacity(cloudOpacity)
-                            .ignoresSafeArea()
+            SpriteView(scene: RainFall(), options: [.allowsTransparency])
+                .opacity(cloudOpacity)
+                .ignoresSafeArea()
             
             Rectangle()
                 .fill(
